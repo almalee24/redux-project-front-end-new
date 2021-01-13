@@ -1,8 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux'
+import {addCompany} from '../../actions/addCompany'
 
 class CompanyInput extends React.Component {
-
-    state = {name: '', location: ''}
+    state = {
+        name: '',
+        location: ''
+    }
+    
 
     handleChange = (event) => {
         this.setState({
@@ -11,18 +16,25 @@ class CompanyInput extends React.Component {
         })
     }
 
+    handleSubmit = (event) => {
+        debugger
+        event.preventDefault()
+        this.props.addCompany(this.state)
+    }
+
     render(){
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Company Name</label>
                     <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} /><br/>
                     <label>Company Location</label>
                     <input type="text" placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange}/><br/>
+                    <input type='submit' />
                 </form>
             </div>
         )
     }
 }
 
-export default CompanyInput 
+export default connect(null, {addCompany})(CompanyInput)

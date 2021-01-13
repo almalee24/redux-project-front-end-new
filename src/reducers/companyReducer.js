@@ -1,7 +1,10 @@
-export default function companyReducer(state = {companies: []}, action){
+export default function companyReducer(state = [], action){
+    
     switch (action.type) {
         case 'FETCH_COMPANIES':
-            return  {companies: action.payload}
+            return  [...action.payload]
+        case 'ADD_COMPANY':
+            return [...state, action.payload]
         default:
             return state 
     }

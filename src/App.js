@@ -1,13 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux'
-import CompaniesContainer from './containers/CompaniesContainer'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CompaniesContainer from './containers/company/CompaniesContainer'
 class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
-        <CompaniesContainer/>
-      </div>
+        <div className="App">
+          <CompaniesContainer />
+        </div>
     );
   }
 }
