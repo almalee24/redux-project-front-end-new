@@ -8,15 +8,19 @@ const CompanyShow = (props) => {
     props.companies.map(company => 
         {if(company.name.toLowerCase() === props.match.params.id.split('-').join(' ')){
             company_name = company 
-            // return company_name
         }}
     )
-    
+
     return (
-        <div>
-            <h2>
-                {company_name ? company_name.name : null}
-            </h2>
+        <div className="store-header">
+            <div className="show-store-info">
+                <div className="show-store-logo">
+                    <h2>
+                        {company_name ? company_name.name : null}
+                    </h2>
+                </div>
+                <div className="store-search">Search Bar</div>
+            </div>
             <GoodsContainer company={company_name}/>
         </div>
     )

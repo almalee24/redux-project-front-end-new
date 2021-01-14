@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
+  .good-container,
+ .company-container{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-auto-rows: 200px;
+     row-gap: 2em;
+     column-gap: 2em;
+     width: 1100px;
+     margin: 0 auto;
+     top: 200px;
+     padding: 0px 32px;
+ }
+
+ .store-background,
+ .store-card{
+  border-radius: 20px;
+ }
+
+ .store-background{
+     background-color: #000;
+     height: 100px;
+ }
+
+ .store-info{
+   text-align: left;
+   margin-top: 20px;
+ }
+
+ .store-card a {
+   text-decoration: none;
+   color: #000000
+ }
+
+ .store-logo{
+   background-color: beige;
+   border-radius: 50%;
+   height: 50px;
+   width: 50px;
+   margin-left: 8px;
+ }
+
+
+ /* NAVIGATION BAR */
+ .nav-bar{
+   height: 100px;
+   border-bottom: 1px solid rgb(232, 233, 235);
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   padding: 0 32px;
+   min-width: 1024px;
+   background-color: rgb(255, 255, 255);
+ }
+
+ .nav-logo img{
+   position: absolute;
+   top: 0px;
+   left: 40px;
+   display: flex;
+   align-items: center;
+   height: 100px;
+   width: auto;
+   z-index: 2;
+ }
+
+ ul li{
+   list-style-type: none;
+   cursor: inherit;
+   flex: 1 0 auto;
+   position: absolute;
+ }
+
+ .nav-links a{
+   text-decoration: none;
+  
+ }
+
+ .nav-links{
+   line-height: 20px;
+ }
+
+/* Company Show Page */
+
+.show-store-logo h2{
+  font-size: 40px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#fff
+}
+
+.show-store-logo{
+  text-align: center;
+}
+
+.store-header{
+  margin: 0;
+  padding: 0;
+}
+.show-store-info{
+  margin-bottom: 50px;
+  background-color: #000;
+  height: 200px;
+}
+
+.wrapper{
+  margin: 0;
+  padding: 0;
+}
+
+/* Goods List */
+.good-container h2{
+  font-size: 15px;
+  color:aqua;
+}
+
+.good-container{
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-auto-rows: 200px;
+     row-gap: 2em;
+     column-gap: 2em;
+     width: 1100px;
+     margin: 0 auto;
+     top: 200px;
+     padding: 0px 32px;
+
+ }
+
+ .individual-good{
+  background-color: bisque;
+  position: relative;
+ }
+
+ .add-cart{
+   position: absolute;
+   top: 4px;
+   right: 4px;
+   z-index: 2;
+   cursor: auto;
+   background-color: blueviolet;
+   border-radius: 20px;
+   border: 0px;
+   padding: 2px;
+   height: 26px;
+   min-width: 36px;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 8px;
+   text-align: center;
+   font-size: 10px;
+}
+
+
+ 

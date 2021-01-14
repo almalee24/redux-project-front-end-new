@@ -5,12 +5,23 @@ import CompanyShow from './CompanyShow'
 const Companies = (company) => {
     return (
         <div className='company-container'>
-            <ul>
                 {company.companies.map(company =>
-                <li className="store-card" key={company.id}>
-                    <Link to={`/stores/${company.name.toLowerCase().split(' ').join('-')}/storefront`}>{company.name}</Link>
-                </li>)}
-            </ul>
+                <div className="store-card" key={company.id}>
+                    <Link to={`/stores/${company.name.toLowerCase().split(' ').join('-')}/storefront`}>
+                        <div className="store-background">
+                            <div className="store-logo">LOGO</div>
+                        </div>
+                        <div className="store-info">
+                            <div className="store-name">
+                                {company.name}
+                            </div>
+                            <div className="store-features">
+                                Delivery
+                            </div>
+                        </div>
+                    </Link>
+                </div>)}
+           
         </div>
     )
 }
