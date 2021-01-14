@@ -1,15 +1,18 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {Redirect} from 'react-router-dom'
+import GoodsContainer from '../containers/GoodsContainer'
 
 const CompanyShow = (props) => {
 
     let company = props.companies[props.match.params.name - 1]
     
     return (
-        <div className="company-container">
-          {company ? company.name : null}
+        <div>
+            <h2>
+                {company ? company.name : null}
+            </h2>
+            <GoodsContainer company={company}/>
         </div>
-        
     )
 }
 
