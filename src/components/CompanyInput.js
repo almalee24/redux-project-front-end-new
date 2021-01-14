@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {addCompany} from '../../actions/addCompany'
+import {addCompany} from '../actions/addCompany'
 
 class CompanyInput extends React.Component {
     state = {
@@ -17,9 +17,12 @@ class CompanyInput extends React.Component {
     }
 
     handleSubmit = (event) => {
-        debugger
         event.preventDefault()
         this.props.addCompany(this.state)
+        this.setState({
+            name: '',
+            location: ''
+        })
     }
 
     render(){

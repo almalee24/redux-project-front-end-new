@@ -9,6 +9,6 @@ export const addCompany = (data) => {
             body: JSON.stringify(data)
         })
         .then(resp => resp.json())
-        .then(data => dispatch({type: 'ADD_COMPANY', payload: company}))
+        .then(company => dispatch({type: 'ADD_COMPANY', payload: company}))
     }
 }
