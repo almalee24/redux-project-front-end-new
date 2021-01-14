@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.store-card{
+    flex: 0 0 auto;
+    padding-left: 12px;
+    box-sizing: border-box;
+    width: 25%;
+    max-width: none;
+    background-color: aqua;
+}
+
+a{
+    text-decoration: none;
+}

@@ -5,6 +5,7 @@ import {fetchCompanies} from '../actions/fetchCompanies'
 import Companies from '../components/Companies'
 import CompanyInput from '../components/CompanyInput'
 import CompanyShow from '../components/CompanyShow'
+import NavBar from '../components/NavBar'
 class CompaniesContainer extends React.Component {
     componentDidMount(){
         this.props.fetchCompanies()
@@ -13,6 +14,7 @@ class CompaniesContainer extends React.Component {
     render(){
         return (
             <div>
+                <NavBar />
                 <Switch>
                     <Route path='/stores/new' component={CompanyInput}/>
                     <Route path='/stores/:id/storefront' render={(routerProps) => <CompanyShow {...routerProps} companies={this.props.companies.companyReducer}/>} />
