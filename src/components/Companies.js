@@ -7,10 +7,12 @@ const Companies = (company) => {
         <div>
             {company.companies.map(company =>
              <div key={company.id}>
-                <Link to={`/stores/${company.id}`}>{company.name}</Link>
+                <Link to={`/stores/${company.name.toLowerCase().split(' ').join('-')}/storefront`}>{company.name}</Link>
             </div>)}
         </div>
     )
 }
 
 export default Companies
+
+    

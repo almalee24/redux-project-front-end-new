@@ -1,17 +1,23 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
 import GoodsContainer from '../containers/GoodsContainer'
 
 const CompanyShow = (props) => {
-
-    let company = props.companies[props.match.params.name - 1]
+   
+    //let company = props.companies.filter(company => company.id == props.match.params.name)[0]
+    let company_name 
+    props.companies.map(company => 
+        {if(company.name.toLowerCase() === props.match.params.id.split('-').join(' ')){
+            company_name = company 
+            // return company_name
+        }}
+    )
     
     return (
         <div>
             <h2>
-                {company ? company.name : null}
+                {company_name ? company_name.name : null}
             </h2>
-            <GoodsContainer company={company}/>
+            <GoodsContainer company={company_name}/>
         </div>
     )
 }

@@ -6,7 +6,7 @@ class GoodsContainer extends React.Component {
     render() {
         return (
             <div>
-                <GoodsInput />
+                <GoodsInput company={this.props.company}/>
                 <Goods goods={this.props.company && this.props.company.goods}/>
             </div>
         )
