@@ -1,6 +1,6 @@
 export const addCompany = (data) => {
     return (dispatch) => {
-        fetch('http://localhost:3000/companies', {
+        fetch('http://localhost:3001/companies', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

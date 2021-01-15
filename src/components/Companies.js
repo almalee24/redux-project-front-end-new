@@ -3,6 +3,7 @@ import {Route, Link} from 'react-router-dom'
 import CompanyShow from './CompanyShow'
 
 const Companies = (company) => {
+   
     return (
         <div className='company-container'>
                 {company.companies.map(company =>

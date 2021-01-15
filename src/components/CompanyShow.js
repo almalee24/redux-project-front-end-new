@@ -8,7 +8,7 @@ const CompanyShow = (props) => {
     props.companies.map(company => 
         {if(company.name.toLowerCase() === props.match.params.id.split('-').join(' ')){
             company_name = company 
-        }}
+        }} 
     )
 
     return (
