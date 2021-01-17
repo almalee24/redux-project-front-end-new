@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Logout from './Logout'
 
 const NavBar = ({ currentUser, loggedIn }) => {
+    debugger
     return (
         <div className="nav-bar">
             <div className="nav-logo">

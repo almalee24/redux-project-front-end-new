@@ -1,6 +1,5 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
-import CompanyShow from './CompanyShow'
+import {Link} from 'react-router-dom'
 
 const Companies = (company) => {
    

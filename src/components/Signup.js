@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import { updateSignupForm } from "../actions/signupForm.js"
 import { signup } from "../actions/currentUser.js"
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) =>  {
 
-    handleChange = (event) => {
+     const handleChange = (event) => {
         const {name, value} = event.target
         const updatedFormInfo = {
           ...signupFormData,
@@ -14,17 +14,17 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) =>  {
         updateSignupForm(updatedFormInfo)
     };
 
-    handleSubmit = (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault()
         signup(signupFormData, history)
     };
 
     return (
         <div>    
-            <form onSubmit={this.handleSubmit}>
-                <input placeholder="username" type="text" name="username" value={signupFormData.username} onChange={this.handleChange}/>
-                <input placeholder="email" type="text" name="email" value={signupFormData.email} onChange={this.handleChange}/>
-                <input placeholder="password" type="password" name="password" value={signupFormData.password} onChange={this.handleChange}/>          
+            <form onSubmit={handleSubmit}>
+                <input placeholder="username" type="text" name="username" value={signupFormData.username} onChange={handleChange}/>
+                <input placeholder="email" type="text" name="email" value={signupFormData.email} onChange={handleChange}/>
+                <input placeholder="password" type="password" name="password" value={signupFormData.password} onChange={handleChange}/>          
                 <input type="submit" value="Sign Up"/>
             </form>
       </div>

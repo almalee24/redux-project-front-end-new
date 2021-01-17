@@ -4,8 +4,6 @@ import './App.css'
 import './index.css'
 import App from './App';
 import { Provider } from 'react-redux';
-import {createStore, applyMiddleware, compose} from 'redux';
-import rootReducer from './reducers';
 import store from './store.js'
 import { BrowserRouter as Router } from 'react-router-dom';
 

@@ -13,6 +13,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
             [name]: value
         }
         updateLoginForm(updatedFormInfo)
+        
     };
 
     const handleSubmit = (event) => {
@@ -32,7 +33,6 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 }
 
 const mapStateToProps = state => {
-
   return{
     loginFormData: state.loginForm
   }

@@ -16,13 +16,13 @@ class App extends React.Component {
 
   render(){
     const loggedIn = this.props
+    debugger
     return (
         <div className="App">
         { loggedIn ? <NavBar location={this.props.location}/> : <Home/> }
           <CompaniesContainer />
           <BrowserRouter>
             <Switch>
-              <Route exact path='/' component={Home} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/signup' render={({history}) =><Signup history={history}/>}/>
             </Switch>
