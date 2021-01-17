@@ -4,7 +4,7 @@ import { updateSignupForm } from "../actions/signupForm.js"
 import { signup } from "../actions/currentUser.js"
 
 const Signup = ({ signupFormData, updateSignupForm, signup, history }) =>  {
-
+ 
      const handleChange = (event) => {
         const {name, value} = event.target
         const updatedFormInfo = {
@@ -20,11 +20,11 @@ const Signup = ({ signupFormData, updateSignupForm, signup, history }) =>  {
     };
 
     return (
-        <div>    
+        <div className="sign-up-form">    
             <form onSubmit={handleSubmit}>
-                <input placeholder="username" type="text" name="username" value={signupFormData.username} onChange={handleChange}/>
-                <input placeholder="email" type="text" name="email" value={signupFormData.email} onChange={handleChange}/>
-                <input placeholder="password" type="password" name="password" value={signupFormData.password} onChange={handleChange}/>          
+                <input placeholder="Name" type="text" name="name" value={signupFormData.name} onChange={handleChange}/><br /><br />
+                <input placeholder="Username" type="text" name="username" value={signupFormData.username} onChange={handleChange}/><br /><br />
+                <input placeholder="Password" type="password" name="password" value={signupFormData.password} onChange={handleChange}/><br />  <br />    
                 <input type="submit" value="Sign Up"/>
             </form>
       </div>

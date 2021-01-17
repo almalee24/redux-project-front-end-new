@@ -1,14 +1,14 @@
-body {
+/*
+gold #d9af25
+red #ff0000
+*/
+
+body, html {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
   }
   
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
-  }
 
   .good-container,
  .company-container{
@@ -76,21 +76,63 @@ body {
    z-index: 2;
  }
 
- ul li{
-   list-style-type: none;
-   cursor: inherit;
-   flex: 1 0 auto;
-   position: absolute;
- }
+.dropdown{
+  position: relative;
+  margin: 16px;
+}
 
- .nav-links a{
-   text-decoration: none;
-  
- }
+.nav-button-header{
+  margin-right: 100px;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  outline: hidden;
+  font-size: 20px;
+}
 
- .nav-links{
-   line-height: 20px;
- }
+.dropdown-menu li{
+  list-style: none;
+  padding: 0.75rem;
+  color: #6c6c6c;
+  font-size: 15px;
+}
+
+.dropdown-menu li:hover{
+  background-color: #dedede;
+}
+
+.dropdown-menu{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.dropdown-button{
+  height: auto;
+  width: auto;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.dropdown{
+  position: relative;
+  margin: 1rem;
+}
+
+.dropdown-menu li input[type="submit" i]{
+  margin-right: 50px;
+  border-radius: 0.25rem;
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+  outline: hidden;
+  font-size: 15px;
+  color: #6c6c6c;
+}
+
 
 /* Company Show Page */
 
@@ -164,4 +206,117 @@ body {
 }
 
 
+/*HOME BACKGROUND*/
+.home-bg{
+  background-image: url(./img/background.jpeg);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+}
+
+.login-button{
+  cursor: pointer;
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  height: 40px;
+  width: auto;
+  position: relative;
+  margin: 0px;
+  color: #000;
+  border-radius: 10px;
+  background-color: #ff0000;
+  border: none;
+}
+
+.login-button a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.sign-up a{
+  text-decoration: none;
+  color: #ff0000;
+}
+
+.sign-up{
+  background-color: #fff;
+  width: 400px;
+  padding: 20px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+}
+
+.home-logo img{
+  top: 0px;
+  left: 40px;
+  height: 100px;
+  width: auto;
+  z-index: 2;
+}
+
+.sign-up-bttn{
+  display: flex;
+  padding: 12px 8px 0px 8px
+}
  
+.button-div{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%
+}
+
+.home-bg h1{
+  color:rgb(66, 66, 66);
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 0px;
+}
+
+.home-bg h2{
+  font-size: 15px;
+  font-weight: 600px;
+  color: rgb(117, 117, 117)
+}
+
+.sign-up-form input[type="text" i],
+.sign-up-form input[type="password" i]{
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(189, 189, 189);
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: rgb(66, 66, 66);
+  font-size: 16px;
+  height: 56px;
+  margin: 0px;
+  padding: 25px 8px 8px;
+  position: relative;
+  width: 100%;
+  opacity: 1;
+}
+
+.sign-up-form input[type="submit" i]{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-weight: 600;
+  display: block;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-size: 18px;
+  height: auto;
+  color: #fff;
+  background-color: #ff0000;
+  width: 100%;
+  position: relative;
+  font-family: inherit;
+  min-height: 48px;
+  margin: 8px 0px;
+}

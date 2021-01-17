@@ -1,6 +1,10 @@
 import React from 'react'
+import addToCart from '../actions/addToCart'
 
 const Goods = (props) => {
+    const handleClick = (good) => {
+        <addToCart data={good} />
+    }
 
     return (
         <div>
@@ -9,7 +13,7 @@ const Goods = (props) => {
                   <div className="individual-good">
                     <div>
                         <div>
-                            <div className="add-cart">+</div>
+                            <div className="add-cart" onClick={handleClick(good)}>+</div>
                         </div>
                     </div>
                     <div>

@@ -17,9 +17,9 @@ class CompaniesContainer extends React.Component {
         return (
             <div className="wrapper">
                 <Switch>
-                    <Route exact path='/stores/new' component={CompanyInput}/>
-                    <Route exact path='/stores/:id/storefront' render={(routerProps) => <CompanyShow {...routerProps} companies={this.props.companies.companyReducer}/>} />
-                    <Route path='/stores' render={(routerProps) => <Companies {...routerProps} companies={this.props.companies.companyReducer}/>}/>
+                    <Route exact={true} path='/stores/new' component={CompanyInput}/>
+                    <Route exact={true} path='/stores/:id/storefront' render={(routerProps) => <CompanyShow {...routerProps} companies={this.props.companies.companyReducer}/>} />
+                    <Route exact={true} path='/stores' render={(routerProps) => <Companies {...routerProps} companies={this.props.companies.companyReducer}/>}/>
                 </Switch>
             </div>
         )

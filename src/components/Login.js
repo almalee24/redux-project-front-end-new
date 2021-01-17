@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {connect } from 'react-redux'
 import { updateLoginForm } from "../actions/loginForm.js"
 import { login } from "../actions/currentUser.js"
 
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
-  
+
     const handleChange = (event) => {
         const {name, value} = event.target
         const updatedFormInfo = {
