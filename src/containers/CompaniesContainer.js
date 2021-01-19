@@ -12,13 +12,20 @@ class CompaniesContainer extends React.Component {
     componentDidMount(){
         this.props.fetchCompanies()
     }
+
+    constructor(props){
+        super(props);
+        this.state = {
+            data: this.props.current_user
+        }
+    }
+    
     render(){
-        
         return (
             <div className="wrapper">
                 <Switch>
                     <Route exact={true} path='/stores/new' component={CompanyInput}/>
-                    <Route exact={true} path='/stores/:id/storefront' render={(routerProps) => <CompanyShow {...routerProps} companies={this.props.companies.companyReducer}/>} />
+                    <Route exact={true} path='/stores/:id/storefront' render={(routerProps) => <CompanyShow {...routerProps} companies={this.props.companies.companyReducer} data={this.props.user}/>} />
                     <Route exact={true} path='/stores' render={(routerProps) => <Companies {...routerProps} companies={this.props.companies.companyReducer}/>}/>
                 </Switch>
             </div>

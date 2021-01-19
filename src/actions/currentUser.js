@@ -71,6 +71,7 @@ export const signup = (credentials, history) => {
 
 
 export const logout = event => {
+  debugger
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch('http://localhost:3001/logout', {

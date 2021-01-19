@@ -3,7 +3,9 @@ import GoodsInput from '../components/GoodInput'
 import Goods from '../components/Goods'
 
 class GoodsContainer extends React.Component {
+  
     render() {
+        debugger
         return (
             <div>
                 <GoodsInput company={this.props.company}/>

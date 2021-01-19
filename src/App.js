@@ -1,7 +1,7 @@
 import React from 'react';
 import CompaniesContainer from './containers/CompaniesContainer'
 import { connect } from 'react-redux'
-import { BrowserRouter, Switch, Route, withRouter } from 'react-router-dom';
+import {Switch, Route, withRouter } from 'react-router-dom';
 import Login from '../src/components/Login'
 import Home from '../src/components/Home'
 import Signup from '../src/components/Signup'
@@ -20,7 +20,7 @@ class App extends React.Component {
     return (
         <div className="App">
           { loggedIn ? <NavBar /> : <Home/> }
-          <CompaniesContainer />
+           <CompaniesContainer user={this.props.current_user}/>
           <Switch>
             <Route exact={true} path='/login' component={Login} />
             <Route exact={true}  path='/signup' render={({history}) =><Signup history={history}/>}/>
@@ -32,6 +32,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
+    current_user: state.currentUser,
     loggedIn: !!state.currentUser
   })
 }
