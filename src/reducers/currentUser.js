@@ -4,7 +4,9 @@ export default (state = null, action) => {
         return action.user
       case "CLEAR_CURRENT_USER":
         return null
+      case 'UPDATE_CURRENT_USER': 
+        return action.payload
       default:
         return state
     }
-  }
+}

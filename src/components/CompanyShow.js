@@ -1,22 +1,22 @@
 import React from 'react'
-import { add } from '../actions/addToCart'
-import { connect } from 'react-redux'
+import {connect } from 'react-redux'
+import { add } from '../actions/cart.js'
 
-const CompanyShow = props => {
-   debugger 
-    let current_user = props.data
+const CompanyShow = ({add, current_user, companies, router}) => {
    
+
     //let company = props.companies.filter(company => company.id == props.match.params.name)[0]
-    let company_name 
-    props.companies && props.companies.map(company => 
-        {if(company.name.toLowerCase() === props.match.params.id.split('-').join(' ')){
+   let company_name 
+    companies.map(company => 
+        {if(company.name.toLowerCase() === router.match.params.id.split('-').join(' ')){
             return company_name = company 
         }} 
     )
 
-    const handleClick = (event, good, current_user) => {
+    const handleClick = (event, good, current_user, company_name) => {
         event.preventDefault()
-        add(good, current_user)
+        
+        add(good, current_user, company_name)
     }
     
 
@@ -36,8 +36,8 @@ const CompanyShow = props => {
                         <div className="good-container-individual">
                             <div>
                                  <img className="individual-picture" src={good.image}></img>
-                                 <div class="individual-cart">
-                                    <div className="add-cart" onClick={((e) => handleClick(e, good, current_user))}></div>
+                                 <div className="individual-cart">
+                                    <div className="add-cart" onClick={((e) => handleClick(e, good, current_user, company_name))}>+</div>
                                  </div>
                             </div>
                             <div className="individual-price"><h2>${good.price}</h2></div>
@@ -51,5 +51,11 @@ const CompanyShow = props => {
     )
 }
 
+const mapStateToProps = state => {
+    return {
+        companies: state.companyReducer,
+        current_user: state.currentUser
+    }
+}
 
-export default CompanyShow
+export default connect(mapStateToProps, { add })(CompanyShow)

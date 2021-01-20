@@ -21,7 +21,6 @@ const NavBar = ({ currentUser, loggedIn }) => {
     //         document.removeEventListener("click", handleClick)
     //     };
     // });
-
     return (
         <div className="nav-bar">
             <div className="nav-logo">
@@ -43,10 +42,12 @@ const NavBar = ({ currentUser, loggedIn }) => {
                     
                 </div>
                 <div className="cart"> 
-                    <button>
-                        <img src={cart}></img>
-                        <h3>0</h3>
-                    </button>
+                    <Link to='/cart'>
+                        <button>
+                            <img src={cart}></img>
+                            <h3>0</h3>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
