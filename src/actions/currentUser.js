@@ -18,6 +18,7 @@ export const clearCurrentUser = () => {
 
 // asynchronous action creators
 export const login = (credentials, history) => {
+ 
   return dispatch => {
     return fetch("http://localhost:3001/login", {
       credentials: "include",
@@ -71,7 +72,7 @@ export const signup = (credentials, history) => {
 
 
 export const logout = event => {
-  debugger
+  
   return dispatch => {
     dispatch(clearCurrentUser())
     return fetch('http://localhost:3001/logout', {

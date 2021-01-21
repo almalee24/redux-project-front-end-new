@@ -12,8 +12,9 @@ class CartContainer extends React.Component {
     }
 
     render(){
+        
         const order = this.props.orders.filter(order => order.id === this.props.current_user.attributes.current_order)
-        debugger
+        
         return (
             <div >
                 <Switch>

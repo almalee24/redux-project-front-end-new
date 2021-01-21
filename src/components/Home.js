@@ -1,15 +1,47 @@
-import React from 'react';
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react';
 import logo from '../img/trollywingz.png'
 import Signup from '../components/Signup';
+import Login from '../components/Login'
+import { withRouter } from 'react-router'
 
-const Home = () => {
+class Home extends Component {
   
-  return (
+
+  constructor(props){
+    super(props)
+    this.state = {
+      info: <Signup history={this.props.history}/>,
+      title: "Avaliable in Location!",
+      subtitle: "Create an account to start shopping",
+      button: "Log in",
+      question: "Already have an account?",
+      history: this.props
+    }
+
+    this.baseState = this.state
+  }
+
+  updateContent = (event) => {
+
+    if(this.state.button === "Log in"){
+      this.setState({
+        info: <Login history={this.props.history}/>,
+        title: "Welcome back",
+        subtitle: "Log in with your username and password",
+        button: 'Sign up',
+        question: "Don't have an account?"
+      })
+    }else{
+      this.setState(this.baseState)
+    }
+  }
+  
+  render(){
+    return (
     <div className="home-bg">
       <div className="sign-up-bttn">
         <div className="button-div">
-          <button className="login-button"><Link to='/login' replace>Login</Link></button>
+          <button className="login-button" onClick={this.updateContent}>{this.state.button}</button>
         </div>
       </div>
       <div className="sign-up">
@@ -17,14 +49,15 @@ const Home = () => {
             <div className="home-logo">
               <img src={logo} alt="logo"></img>
             </div>
-            <h1>Avaliable in Location!</h1>
-            <h2>Create an account to start shopping</h2>
+            <h1>{this.state.title}</h1>
+            <h2>{this.state.subtitle}</h2>
         </div>
-        <Signup />
-        <p>Already have an account?<Link to='/login' > Log In</Link></p>
+        {this.state.info}
+        <p>{this.state.question}<button onClick={this.updateContent}> {this.state.button}</button></p>
       </div>
     </div>
   );
+  }
 };
 
-export default Home;
+export default withRouter(Home);

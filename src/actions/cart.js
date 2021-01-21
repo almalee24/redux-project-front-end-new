@@ -7,7 +7,7 @@ export const add = (data, user, company) => dispatch => {
   let quantity = 1
   
     if(currentOrder == null){
-      debugger
+     
       fetch("http://localhost:3001/orders/neworder", {
         method: 'POST',
         headers: {
@@ -21,14 +21,14 @@ export const add = (data, user, company) => dispatch => {
         dispatch({ type: "UPDATE_CURRENT_USER", payload: data}) 
       })
     }else {
-      debugger
+      
       fetch("http://localhost:3001/order_items", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({order_id: currentOrder, product_id: goodId, quantity: quantity, company_id: companyId})
+        body: JSON.stringify({user_id: userId, order_id: currentOrder, product_id: goodId, quantity: quantity, company_id: companyId})
       })
       .then(rsp => rsp.json())
       .then(data => {
