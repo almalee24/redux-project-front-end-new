@@ -106,6 +106,7 @@ body, html {
   height: 80px;
   transition: all .4s ease-in;
   z-index: 1;
+  margin-bottom: 50px;
  }
 
  .scrolled{
@@ -135,7 +136,7 @@ body, html {
   margin: 0;
   align-items: center;
   text-align: center;
-
+  margin-right: 50px;
 }
 
 .nav-links div{
@@ -201,7 +202,7 @@ body, html {
   color: #6c6c6c;
 }
 
-.cart a{
+.cart {
   background-color: #ff0000;
   border: none;
   height: 40px;
@@ -214,13 +215,19 @@ body, html {
   text-decoration: none;
 }
 
-.cart a img{
+.nav-button-header:focus,
+.cart:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.cart img{
   height: 17px;
   display: block;
   width: 17px;
 }
 
-.cart a h3{
+.cart h3{
   display: block;
   margin-top: 0;
   margin-left: 10px;

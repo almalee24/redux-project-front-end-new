@@ -6,8 +6,8 @@ export const add = (data, user, company) => dispatch => {
   const companyId = company.id
   let quantity = 1
   
+  
     if(currentOrder == null){
-     
       fetch("http://localhost:3001/orders/neworder", {
         method: 'POST',
         headers: {

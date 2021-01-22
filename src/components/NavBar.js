@@ -7,42 +7,45 @@ import cart from '../img/cart.svg'
 import Cart from '../components/Cart'
 
 const NavBar = ({ currentUser, loggedIn }) => {
-    const [open, setOpen] = React.useState(false)
-    const [showCart, setShowCart] = React.useState(false)
+    //code to open drop down button 
+        const [open, setOpen] = React.useState(false)
+        const drop = React.useRef(null)
 
-    const drop = React.useRef(null)
-
-    const [scrolled, setScrolled] = React.useState(false)
-
-    const handleScroll = () => {
-        const offset = window.scrollY;
-        if(offset > 200){
-            setScrolled(true)
-        }else{
-            setScrolled(false)
+        const handleClick = (e) => {
+             if(!e.target.closest(`.${drop.current.className}`) && open){
+                setOpen(false)
+            }
         }
-    }
-    function handleClick(e) {
-        if (!e.target.closest("drop-down-wrapper") && open){
-            setOpen(false)
+    
+    //do do sticky header
+
+        const [scrolled, setScrolled] = React.useState(false)
+
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if(offset > 200){
+                setScrolled(true)
+            }else{
+                setScrolled(false)
+            }
         }
-    }
+
+        let navbarClasses = ["navbar"] 
+
+        if(scrolled){
+            navbarClasses.push('scrolled')
+        }
 
     useEffect(() => {
-        window.addEventListener('scroll', handleScroll)
-        document.addEventListener("click", handleClick)
-        return () => {
-            document.addEventListener("click", handleClick)
-        }
+            window.addEventListener('scroll', handleScroll)
+      
+            document.addEventListener('click', handleClick);
+            return () => {
+                document.removeEventListener("click", handleClick)
+            }
+        
     })
-
-    let navbarClasses = ["navbar"] 
-
-    if(scrolled){
-        navbarClasses.push('scrolled')
-    }
-
-    
+     
 
     return (
         <header className={navbarClasses.join(" ")}>
@@ -55,33 +58,22 @@ const NavBar = ({ currentUser, loggedIn }) => {
                             <p>Account</p>
                     </button>
                     { open &&
-                    <div className="dropdown-button">
-                        <ul className="dropdown-menu">
-                            { loggedIn ? <><li className="liCls" id="loggedin">Hi, {currentUser.attributes.name}</li></> : null}
-                            { loggedIn ? <><li className="liCls" ><Logout/></li></> : null} 
-                        </ul>
-                    </div> 
+                        <div className="dropdown-button">
+                            <ul className="dropdown-menu">
+                                { loggedIn ? <><li className="liCls" id="loggedin">Hi, {currentUser.attributes.name}</li></> : null}
+                                { loggedIn ? <><li className="liCls" ><Logout/></li></> : null} 
+                            </ul>
+                        </div> 
                     }
                     
                 </div>
-                <button className="cart" onClick={handleClick}> 
+                <Link to="/cart"><button className="cart" > 
                         <img src={cart} alt="cart-img"></img>
                         <h3>0</h3>
-                </button>
+                </button></Link>
+                
             </div>
-            <div>
-                {showCart &&  <Cart onClose={() => setShowCart(false)}> {
-                    closeCart =>
-                        <div>
-                            <input/>
-                            <button onClick={closeCart}>
-                                Submit
-                            </button>
-                        </div>
-                }
-                </Cart>
-                }
-            </div>
+            
         </header>
     )
 }

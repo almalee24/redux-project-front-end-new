@@ -12,11 +12,12 @@ class CartContainer extends React.Component {
     }
 
     render(){
-        
         const order = this.props.orders.filter(order => order.id === this.props.current_user.attributes.current_order)
+        debugger
         
         return (
             <div >
+                
                 <Switch>
                     <Route exact path='/cart' render={(routerProps) => <Cart order={order} />} />
                 </Switch>
@@ -26,6 +27,7 @@ class CartContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
+    debugger 
     return {
         orders: state.ordersReducer,
         current_user: state.currentUser,
