@@ -7,13 +7,12 @@ import '../App.css'
 
 
 class CartContainer extends React.Component {
-    componentDidMount(){
+    componentDidMount(){ 
         this.props.fetchCart()
     }
 
     render(){
         const order = this.props.orders.filter(order => order.id === this.props.current_user.attributes.current_order)
-        debugger
         
         return (
             <div >
@@ -27,7 +26,7 @@ class CartContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-    debugger 
+  
     return {
         orders: state.ordersReducer,
         current_user: state.currentUser,

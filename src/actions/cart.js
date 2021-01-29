@@ -1,5 +1,4 @@
 export const add = (data, user, company) => dispatch => {
-  debugger
   const userId = parseInt(user.id)
   const currentOrder = user.attributes.current_order 
   const goodId = data.id
@@ -39,7 +38,8 @@ export const add = (data, user, company) => dispatch => {
 
 
 
-export const fetchCart = () => {
+export const fetchCart = (user) => {
+  
   return(dispatch) => {
     fetch('http://localhost:3001/orders')
         .then(resp => resp.json())

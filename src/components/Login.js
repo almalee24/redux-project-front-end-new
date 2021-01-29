@@ -5,7 +5,7 @@ import { login } from "../actions/currentUser.js"
 
 
 const Login = ({ loginFormData, updateLoginForm, login, history }) => {
-  debugger
+
     const handleChange = (event) => {
         const {name, value} = event.target
         const updatedFormInfo = {
@@ -33,7 +33,7 @@ const Login = ({ loginFormData, updateLoginForm, login, history }) => {
 }
 
 const mapStateToProps = state => {
-  debugger
+
   return{
     loginFormData: state.loginForm
   }

@@ -7,7 +7,7 @@ const Cart = (props) => {
    
     let order_items 
     let companies
-    debugger 
+    
     if(props.order.length !== 0){
         order_items =  props.order[0].order_items.reduce((acc, item) => {
             (acc[item.company_id] = acc[item.company_id] || []).push(item);
@@ -25,21 +25,20 @@ const Cart = (props) => {
             </div> 
         )
     }else{
-        return (
-                <div>{companies.map(x => {
-                    let itemDetails = order_items[x];
-                    console.log(itemDetails)
+        
+        return(  
+            
+            <div>{companies.map(x => {
+                let itemDetails = order_items[x];
+                console.log(itemDetails)
                     
 
-                    {itemDetails.map(item => {
-                        debugger 
-                       return( <div key={x}>
-                          <OrderItems cart={itemDetails} />
-                        </div>)
-                       
-                    })}
+                {itemDetails.map(item => {
+                    <div>{item.id}</div>
+                    {/* <OrderItems cart={itemDetails} /> */}
+                })}
 
-                })}</div>
+            })}</div>
         )
     }
 }
