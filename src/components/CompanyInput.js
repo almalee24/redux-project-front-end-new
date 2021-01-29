@@ -5,14 +5,18 @@ import {addCompany} from '../actions/addCompany'
 class CompanyInput extends React.Component {
     state = {
         name: '',
-        location: ''
+        location: '',
+        image_logo: '',
+        image_background: ''
     }
     
 
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value,
-            [event.target.location]: event.target.value 
+            [event.target.location]: event.target.value,
+            [event.target.image_logo]: event.target.value,
+            [event.target.image_background]: event.target.value
         })
     }
 
@@ -21,18 +25,25 @@ class CompanyInput extends React.Component {
         this.props.addCompany(this.state)
         this.setState({
             name: '',
-            location: ''
+            location: '',
+            image_logo: '',
+            image_background: ''
         })
     }
 
     render(){
         return (
             <div>
+                <h2>Submit a new Company</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label>Company Name</label>
+                    <label>Name</label>
                     <input type="text" placeholder="Name" value={this.state.name} name="name" onChange={this.handleChange} /><br/>
-                    <label>Company Location</label>
+                    <label>Location</label>
                     <input type="text" placeholder="Location" value={this.state.location} name="location" onChange={this.handleChange}/><br/>
+                    <label>Logo</label>
+                    <input type="text" placeholder="Logo" value={this.state.image_logo} name="image_logo" onChange={this.handleChange}/><br/>
+                    <label>Background</label>
+                    <input type="text" placeholder="Background" value={this.state.image_background} name="image_background" onChange={this.handleChange}/><br/>
                     <input type='submit' />
                 </form>
             </div>

@@ -29,14 +29,15 @@ class App extends React.Component {
           <Home/> 
           </>
           }
-          {user && !!user.admin ? <Route  exact={true} path='/admin'  component={Admin}/> : <Home />}
+          {user && !!user.admin ? <Route exact={true} path='/admin' render={(routerProps) => <Admin />} /> : <Home />}
+          
         </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-
+ 
   return ({
     current_user: state.currentUser,
     loggedIn: !!state.currentUser
