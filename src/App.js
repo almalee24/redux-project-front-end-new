@@ -12,7 +12,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    this.props.getCurrentUser()
+    this.props.getCurrentUserBoundToDispatch()
   }
 
   render(){
@@ -44,4 +44,10 @@ const mapStateToProps = state => {
   })
 }
 
-export default withRouter(connect(mapStateToProps, { getCurrentUser })(App));
+const mapDispatchToProps = dispatch => {
+  return {
+    getCurrentUserBoundToDispatch: () => dispatch(getCurrentUser())
+  }
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

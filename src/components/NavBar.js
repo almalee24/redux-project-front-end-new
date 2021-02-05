@@ -12,6 +12,7 @@ const NavBar = ({ currentUser, loggedIn }) => {
         const drop = React.useRef(null)
 
         const handleClick = (e) => {
+            debugger
              if(!e.target.closest(`.${drop.current.className}`) && open){
                 setOpen(false)
             }
